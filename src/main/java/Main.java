@@ -31,7 +31,7 @@ public class Main {
     else if(pattern.contains("\\d")){
       char[] sequence = inputLine.toCharArray();
       for(char ch : sequence){
-        if( ch >=48 && ch ch <= 57) return true;
+        if(ch >=48 && ch <= 57) return true;
       }
       return false;
     }
