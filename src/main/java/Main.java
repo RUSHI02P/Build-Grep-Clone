@@ -25,13 +25,24 @@ public class Main {
   }
 
   public static boolean matchPattern(String inputLine, String pattern) {
+    // Character Array presentation of String 
+    char[] sequence = inputLine.toCharArray();
     if (pattern.length() == 1) {
       return inputLine.contains(pattern);
     } 
     else if(pattern.contains("\\d")){
-      char[] sequence = inputLine.toCharArray();
+      // For any character in the array if it's between [0 to 9] ---> \d matches [0 to 9] ---> return true
       for(char ch : sequence){
+        // Representation through ASCII Coding Standard
         if(ch >=48 && ch <= 57) return true;
+      }
+      return false;
+    }
+    else if(pattern.contains("\\w")){
+      // For any character in the array if it's between [0 to 9, A - Z, a - z, _ ] ---> \w matches [0 to 9, A - Z, a - z, _ ] ---> return true
+      for(char ch : sequence){
+        // Representation via ASCII Coding Standard
+        if((ch >=65 && ch <=90) || (ch >= 97 && ch <=122) || (ch >=48 && ch <= 57) || ch == 95 ) return true;
       }
       return false;
     }
