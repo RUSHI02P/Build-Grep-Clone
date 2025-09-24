@@ -27,7 +27,15 @@ public class Main {
   public static boolean matchPattern(String inputLine, String pattern) {
     if (pattern.length() == 1) {
       return inputLine.contains(pattern);
-    } else {
+    } 
+    else if(pattern.equals("\d")){
+      char[] sequence = inputLine.toCharArray();
+      for(char ch : sequence){
+        if( ch >=48 && ch ch <= 57) return true;
+      }
+      return false;
+    }
+    else {
       throw new RuntimeException("Unhandled pattern: " + pattern);
     }
   }
